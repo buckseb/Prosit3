@@ -1,3 +1,5 @@
+package tn.esprit.gestionzoo.entities;
+
 public class Zoo {
     private Animal[] animals;
     private String name;
@@ -21,7 +23,7 @@ public class Zoo {
     }
 
     public boolean addAnimal(Animal animal) {
-        if (animalCount < nbrCages) {
+        if (!isZooFull()) {
             animals[animalCount++] = animal;
             return true;
         } else {
