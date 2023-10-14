@@ -1,13 +1,17 @@
 package tn.esprit.gestionzoo.main;
 
 import java.util.Scanner;
-import tn.esprit.gestionzoo.entities.Animal;
-import tn.esprit.gestionzoo.entities.Zoo;
+
+import tn.esprit.gestionzoo.entities.*;
 
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         Zoo myZoo = new Zoo("My Zoo", "Cityville", 5);
+        Aquatic aqua = new Aquatic();
+        Terrestrial terre = new Terrestrial();
+        Dolphin dolphin = new Dolphin();
+        Penguin penguin = new Penguin();
 
         while (true) {
             System.out.println("Zoo Management Menu:");
