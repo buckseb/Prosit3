@@ -27,4 +27,14 @@ public class Aquatic extends Animal {
         System.out.println("This aquatic animal is swimming.");
     }
 
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;}
+        else if (o != null && this.getClass() == o.getClass()) {
+            Aquatic aquatic = (Aquatic)o;
+            return aquatic.getName().equals(this.getName()) && aquatic.getAge() == this.getAge() && aquatic.getHabitat().equals(this.getHabitat());
+        } else {
+            return false;
+        }
+    }
 }
