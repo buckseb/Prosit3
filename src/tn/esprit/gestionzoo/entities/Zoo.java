@@ -24,13 +24,15 @@ public class Zoo {
         System.out.println("Number of Cages: " + nbrCages);
     }
 
-    public boolean addAnimal(Animal animal) {
-        if (!isZooFull()) {
-            animals[animalCount++] = animal;
-            return true;
+    public void addAnimal(Animal animal) throws ZooFullException, InvalidAgeException {
+        if (animalCount < nbrCages) {
+            if (animal.getAge() < 0) {
+                throw new InvalidAgeException("Invalid age for the animal: " + animal.getName());
+            }
+            animals[animalCount] = animal;
+            animalCount++;
         } else {
-            System.out.println("The zoo is full. Cannot add more animals.");
-            return false;
+            throw new ZooFullException("Zoo is full. Cannot add more animals.");
         }
     }
 
