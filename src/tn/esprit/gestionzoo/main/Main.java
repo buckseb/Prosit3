@@ -6,16 +6,14 @@ import tn.esprit.gestionzoo.entities.*;
 
 public class Main {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        Zoo myZoo = new Zoo();
-        Animal animal = new Animal();
+        Aquatic aquatic = new Aquatic();
+        Terrestrial terrestrial = new Terrestrial();
 
-        try {
-            myZoo.addAnimal(animal);
-            System.out.println("Animal added to the zoo.");
-        } catch (ZooFullException e) {
-            System.out.println("Failed to add animal. Zoo is full.");
-        } catch (InvalidAgeException e) {
-            System.out.println("Invalid age for the animal.");
-        }
-}}
+        aquatic.eatMeat(Food.MEAT);
+        aquatic.eatMeat(Food.PLANT);
+
+        terrestrial.eatMeat(Food.MEAT);
+        terrestrial.eatPlant(Food.PLANT);
+        terrestrial.eatPlantAndMeat(Food.BOTH);
+}
+}
